@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="SDCNL">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SDCNL</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Deep Learning for Suicide and Depression Identification with Unsupervised Label Correction          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Ayaan Haque</a><sup>*1</sup>,</span>
+            <span class="author-block">
+              <a href="">Viraaj Reddi</a><sup>*1</sup>,</span>
+            <span class="author-block">
+              <a href="">Tyler Giallanza</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Saratoga High School</span>,
+            <span class="author-block"><sup>2</sup>Princeton University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="static/files/paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ayaanzhaque/SDCNL"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <video id="teaser" autoplay muted loop height="100%">
+          <source src="https://storage.googleapis.com/nerfies-public/videos/teaser.mp4"
+                  type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf">D-NeRF</span> turns selfie videos from your phone into free-viewpoint
+          portraits (<i>nerfies</i>).
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop height="100%">
+            <source src="https://storage.googleapis.com/nerfies-public/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop height="100%">
+            <source src="https://storage.googleapis.com/nerfies-public/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop height="100%">
+            <source src="https://storage.googleapis.com/nerfies-public/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop height="100%">
+            <source src="https://storage.googleapis.com/nerfies-public/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop height="100%">
+            <source src="https://storage.googleapis.com/nerfies-public/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop height="100%">
+            <source src="https://storage.googleapis.com/nerfies-public/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop height="100%">
+            <source src="https://storage.googleapis.com/nerfies-public/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop height="100%">
+            <source src="https://storage.googleapis.com/nerfies-public/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<section class='section'>
+  <div class='container'>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <div class="content has-text-justified">
+    <img src="static/images/pipeline.png" style='width:100%;'>
+  </div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified">
+
+          <p>
+            Early detection of suicidal ideation in depressed individuals can allow for adequate medical attention and support, 
+            which in many cases is life-saving. Recent NLP research focuses on classifying, from a given piece of text, if an individual 
+            is suicidal or clinically healthy. However, there have been no major attempts to differentiate between depression and suicidal 
+            ideation, which is an important clinical challenge. Due to the scarce availability of EHR data, suicide notes, or other similar verified sources, 
+            web query data has emerged as a promising alternative. Online sources, such as Reddit, allow for anonymity that prompts honest disclosure of symptoms, 
+            making it a plausible source even in a clinical setting. However, these online datasets also result in lower performance, which can be attributed to the 
+            inherent noise in web-scraped labels, which necessitates a noise-removal process. Thus, we propose SDCNL, a suicide versus depression classification method 
+            through a deep learning approach. We utilize online content from Reddit to train our algorithm, and to verify and correct noisy labels, we propose a novel unsupervised 
+            label correction method which, unlike previous work, does not require prior noise distribution information. Our extensive experimentation with multiple deep word embedding 
+            models and classifiers display the strong performance of the method in a new, challenging classification application.
+          </p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+  <!--/ Abstract. -->
+
+  <!-- Paper video. 
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-two-thirds">
+      <h2 class="title is-2">Video</h2>
+      <div class="publication-video">
+        <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<section class="section">
+  <div class="container">
+
+    <h2 class="title is-2">Noisy Labels</h2>
+
+    <p>
+      Using Reddit data poses the issue of noisy labels, or corrupted labels. 
+      In order to utilize large webscraped datasets, we use unsupervised clustering to 
+      perform confidence-based correction of the labels in the dataset.
+    </p>
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        
+        <div class="content">
+          <h2 class="title is-2"></h2>
+          
+
+          <img src="static/images/GMM_w_BERT.png" style='width:100%;'>
+          <p>GMM clustering using BERT embeddings and PCA reduction to 2 dimensions show the difficulty of the clustering task, 
+            as there is little variety in the clusters and they heavily overlap. We use co-variance type "full".</p>
+          
+
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-2"></h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            
+            <img src="static/images/noise-removal-consistency.png" style='width:100%;'>
+          <p>Correction rates of the label correction algorithms at different noise rates on the IMDB dataset. 
+            The left figure displays correction rates with uniform noise injections, and the right figure 
+            displays correction rates with class-weighted noise injections. For example, we split by 30%-10% 
+            or 25%-15%.</p>
+          
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!--STARTING CLASSIFICATION HERE -->
+
+    <h2 class="title is-2">Classification</h2>
+
+    <p>
+      We use deep transformers and classifiers to perform suicide vs depression classification. 
+      After extensive experimentation, SDCNL achieves upwards of 95% accuracy, outperforming numerous 
+      other studies on a more difficult task.
+    </p>
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        
+        <div class="content">
+          <h2 class="title is-2"></h2>
+          
+
+          <img src="static/images/roc_curves_final.png" style='width:100%;'>
+          <p>ROC curves of performance of top 4 models with label correction 
+            (red) against the same models without label correction (blue).</p>
+          
+
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-2"></h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            
+            <img src="static/images/roc_curves_easy.png" style='width:100%;'>
+          <p>ROC curves of model performance from four best models on our task (proposed) 
+            against the conventional suicide vs healthy task (standard).</p>
+          
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!--/ Matting. -->
+
+    <!-- Animation. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h4 class="title is-2">Application</h4>
+        <div class="content has-text-justified">
+          <p>
+            The applied setting of our system is to provide professionals with a supplementary tool 
+            for individual patient diagnosis, as opposed to solely being a screening method on social media 
+            platforms. SDCNL could be used by professional therapists as a "second opinion", friends and family 
+            as a preliminary screening for loved ones, or even on social media platforms to identify at-risk users. 
+            We contend that our method is applicable in a clinical setting given Reddit's propensity for honest user 
+            disclosure, especially considering the ability of our label correction method to remove substantial amounts 
+            of noise from the labels. As opposed to models trained on EHRs or suicide notes, which often include limited 
+            amounts of data, leveraging online content allows for the use of data-hungry deep learning models, which we 
+            prove can be quite effective. 
+
+          </p>
+          
+
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+  </div>
+</section>
+
+    <!-- Animation. -->
+    <section class="section">
+      <div class="container-fluid">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-2">Paper</h2>
+        <div class="content has-text-justified">
+
+        <embed src="static/files/paper.pdf" width="100%" height='700px'/>
+      
+    </div>
+  </div>
+  </div>
+</div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container content">
+    <h2 class="title">Citation</h2>
+    <pre><code>@article{park2020nerfies
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Deformable Neural Radiance Fields},
+  journal   = {arXiv preprint arXiv:2011.12948},
+  year      = {2020},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="static/files/paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/ayaanzhaque/SDCNL" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
+            The website tempalte was taken from <a href='https://github.com/nerfies/nerfies.github.io'>this website.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
