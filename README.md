@@ -1,4 +1,4 @@
-# SDCNL
+# [SDCNL](https://ayaanzhaque.github.io/SDCNL/)
 
 This repository contains the implementation of the paper "Deep Learning for Suicide and Depression Identification with Unsupervised Label Correction" by Ayaan Haque*, Viraaj Reddi*, and Tyler Giallanza. 
 
