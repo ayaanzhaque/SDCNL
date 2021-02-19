@@ -46,5 +46,12 @@ The below list details how to utilize the SDCNL method. All models and code are 
 If you found our code or paper useful, please consider citing.
 
 ```
-citation
+@misc{haque2021deep,
+      title={Deep Learning for Suicide and Depression Identification with Unsupervised Label Correction}, 
+      author={Ayaan Haque and Viraaj Reddi and Tyler Giallanza},
+      year={2021},
+      eprint={2102.09427},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
 ```
