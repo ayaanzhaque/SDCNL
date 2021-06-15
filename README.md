@@ -1,8 +1,10 @@
 # [SDCNL](https://ayaanzhaque.github.io/SDCNL/)
 
-This repository contains the implementation of the paper ["Deep Learning for Suicide and Depression Identification with Unsupervised Label Correction"](https://arxiv.org/abs/2102.09427) by Ayaan Haque*, Viraaj Reddi*, and Tyler Giallanza. 
+This repository contains the implementation of the paper ["Deep Learning for Suicide and Depression Identification with Unsupervised Label Correction"](https://arxiv.org/abs/2102.09427) by Ayaan Haque*, Viraaj Reddi*, and Tyler Giallanza. In [ICANN](https://e-nns.org/icann2021/), 2021.
 
 We present SDCNL to address the unexplored issue of classifying between depression and more severe suicidal tendencies using web-scraped data. In particular, we leverage Reddit data, develop a novel label correction method to remove inherent noise in the data using unsupervised learning, and develop a deep-learning classifier based on pre-trained transformers.
+
+For a more in-depth review, refer to this medium article (in Towards Data Science): https://towardsdatascience.com/nlp-for-suicide-and-depression-identification-with-noisy-labels-98d7bb98f3e8?sk=43d9806e0975695c08e6b19ad36b3a9f
 
 ## Abstract
   
