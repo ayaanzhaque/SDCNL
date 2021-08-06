@@ -6,6 +6,14 @@ We present SDCNL to address the unexplored issue of classifying between depressi
 
 For a more in-depth review, refer to this medium article (in Towards Data Science): https://towardsdatascience.com/nlp-for-suicide-and-depression-identification-with-noisy-labels-98d7bb98f3e8?sk=43d9806e0975695c08e6b19ad36b3a9f
 
+<p align="center">
+    <a href="https://www.youtube.com/watch?v=-JVbne534sQ">
+        <img src="https://img.youtube.com/vi/-JVbne534sQ/0.jpg" alt="Thumbnail"/>
+        <br />
+        Watch our Teaser Presentation
+    </a>
+</p>
+
 ## Abstract
   
 Early detection of suicidal ideation in depressed individuals can allow for adequate medical attention and support, which in many cases is life-saving. Recent NLP research focuses on classifying, from a given piece of text, if an individual is suicidal or clinically healthy. However, there have been no major attempts to automate the process of determining when depression turns into suicidal ideation, which is an important clinical challenge. Due to the scarce availability of EHR data, suicide notes, or other similar verified sources, web query data has emerged as a promising alternative. Online sources, such as Reddit, allow for anonymity that prompts honest disclosure of symptoms, making it a plausible source even in a clinical setting. However, these online datasets also result in lower performance, which can be attributed to the inherent noise in web-scraped labels, which necessitates a noise-removal process. Thus, we propose SDCNL, a suicide versus depression classification method through a deep learning approach. We utilize online content from Reddit to train our algorithm, and to verify and correct noisy labels, we propose a novel unsupervised label correction method which, unlike previous work, does not require prior noise distribution information. Our extensive experimentation with multiple deep word embedding models and classifiers display the strong performance of the method in a new, challenging classification application.
